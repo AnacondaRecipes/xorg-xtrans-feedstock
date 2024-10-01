@@ -1,8 +1,8 @@
 {% set xorg_name = "xtrans" %}
 {% set xorg_category = "lib" %}
 {% set name = "xorg-" ~ xorg_name %}
-{% set version = "1.4.0" %}
-{% set sha256 = "377c4491593c417946efcd2c7600d1e62639f7a8bbca391887e2c4679807d773" %}
+{% set version = "1.5.0" %}
+{% set sha256 = "1ba4b703696bfddbf40bacf25bce4e3efb2a0088878f017a50e9884b0c8fb1bd" %}
 {% set am_version = "1.15" %} # keep synchronized with build.sh
 
 package:
@@ -10,12 +10,11 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.bz2
-  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2
+  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.xz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   detect_binary_files_with_prefix: true
 
 requirements:
