@@ -1,22 +1,20 @@
 {% set xorg_name = "xtrans" %}
 {% set xorg_category = "lib" %}
 {% set name = "xorg-" ~ xorg_name %}
-{% set version = "1.4.0" %}
-{% set sha256 = "377c4491593c417946efcd2c7600d1e62639f7a8bbca391887e2c4679807d773" %}
-{% set am_version = "1.15" %} # keep synchronized with build.sh
+{% set version = "1.5.0" %}
+{% set sha256 = "1ba4b703696bfddbf40bacf25bce4e3efb2a0088878f017a50e9884b0c8fb1bd" %}
+{% set am_version = "1.16" %} # keep synchronized with build.sh
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.bz2
-  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2
+  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.xz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
-  detect_binary_files_with_prefix: true
+  number: 0
 
 requirements:
   build:
@@ -29,9 +27,9 @@ requirements:
     - m2-base                       # [win]
     - make                          # [unix]
     - m2-make                       # [win]
-    - {{ compiler('c') }}           # [unix]
+    - {{ compiler("c") }}           # [unix]
     - {{ stdlib("c") }}             # [unix]
-    - {{ compiler('m2w64_c') }}     # [win]
+    - {{ compiler("m2w64_c") }}     # [win]
     - {{ stdlib("m2w64_c") }}       # [win]
     - autoconf                      # [unix]
     - automake                      # [unix]
