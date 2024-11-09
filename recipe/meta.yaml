@@ -1,8 +1,8 @@
 {% set xorg_name = "xtrans" %}
 {% set xorg_category = "lib" %}
 {% set name = "xorg-" ~ xorg_name %}
-{% set version = "1.5.1" %}
-{% set sha256 = "dea80fbd8c3c941495b4b1d2785cb652815d016849a0d2ef90d1140de916993e" %}
+{% set version = "1.5.2" %}
+{% set sha256 = "5c5cbfe34764a9131d048f03c31c19e57fb4c682d67713eab6a65541b4dff86c" %}
 {% set am_version = "1.16" %} # keep synchronized with build.sh
 
 package:
