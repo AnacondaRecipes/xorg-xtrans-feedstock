@@ -1,0 +1,15 @@
+diff --git a/Xtrans.h b/Xtrans.h
+index 8cf0daf..77af5ed 100644
+--- a/Xtrans.h
++++ b/Xtrans.h
+@@ -56,6 +56,10 @@ from The Open Group.
+ 
+ #ifndef WIN32
+ #include <sys/socket.h>
++#else
++/* conda-forge: nonstandard includes needed for struct addrinfo */
++#include <X11/Xwinsock.h>
++#include <ws2tcpip.h>
+ #endif
+ 
+ #ifdef __clang__
