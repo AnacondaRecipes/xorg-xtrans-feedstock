@@ -45,6 +45,8 @@ test:
 
 about:
   home: https://www.x.org/
+  dev_url: https://gitlab.freedesktop.org/xorg/lib/libxtrans
+  doc_url: https://gitlab.freedesktop.org/xorg/lib/libxtrans
   license: MIT
   license_family: MIT
   license_file: COPYING
