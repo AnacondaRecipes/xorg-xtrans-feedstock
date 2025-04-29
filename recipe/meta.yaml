@@ -40,7 +40,7 @@ requirements:
 test:
   commands:
     - echo on  # [win]
-    - test -f $PREFIX/include/Xtrans.h                          # [unix]
+    - test -f $PREFIX/include/X11/Xtrans/Xtrans.h                          # [unix]
     - if not exist %LIBRARY_INC%\X11\Xtrans\Xtrans.h exit /b 1  # [win]
 
 about:
