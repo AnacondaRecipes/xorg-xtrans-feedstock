@@ -3,7 +3,6 @@
 {% set name = "xorg-" ~ xorg_name %}
 {% set version = "1.6.0" %}
 {% set sha256 = "faafea166bf2451a173d9d593352940ec6404145c5d1da5c213423ce4d359e92" %}
-{% set am_version = "1.16" %} # keep synchronized with build.sh
 
 package:
   name: {{ name|lower }}
@@ -30,9 +29,7 @@ requirements:
     - make                          # [unix]
     - m2-make                       # [win]
     - {{ compiler("c") }}           # [unix]
-    - {{ stdlib("c") }}             # [unix]
     - {{ compiler("m2w64_c") }}     # [win]
-    - {{ stdlib("m2w64_c") }}       # [win]
     - autoconf                      # [unix]
     - automake                      # [unix]
     - gettext                       # [unix]
@@ -42,9 +39,14 @@ requirements:
 
 test:
   commands:
+    - echo on  # [win]
+    - test -f $PREFIX/include/X11/Xtrans/Xtrans.h                          # [unix]
+    - if not exist %LIBRARY_INC%\X11\Xtrans\Xtrans.h exit /b 1  # [win]
 
 about:
   home: https://www.x.org/
+  dev_url: https://gitlab.freedesktop.org/xorg/lib/libxtrans
+  doc_url: https://gitlab.freedesktop.org/xorg/lib/libxtrans
   license: MIT
   license_family: MIT
   license_file: COPYING
