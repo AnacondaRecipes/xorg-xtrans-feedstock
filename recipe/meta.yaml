@@ -16,20 +16,14 @@ source:
 
 build:
   number: 1
+  skip: true  # [win]
 
 requirements:
   build:
-    - m2-autoconf                   # [win]
-    - m2-automake{{ am_version }}   # [win]
-    - m2-libtool                    # [win]
     - pkg-config                    # [unix]
-    - m2-pkg-config                 # [win]
     - gnuconfig                     # [unix]
-    - m2-base                       # [win]
     - make                          # [unix]
-    - m2-make                       # [win]
     - {{ compiler("c") }}           # [unix]
-    - {{ compiler("m2w64_c") }}     # [win]
     - autoconf                      # [unix]
     - automake                      # [unix]
     - gettext                       # [unix]
